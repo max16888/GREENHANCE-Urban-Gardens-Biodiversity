@@ -1,0 +1,1739 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_3643a3c837ee6641a6827220e9c37f37 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    <div style="position:fixed;bottom:30px;left:30px;z-index:9999;background:white;padding:8px 10px;border-radius:6px;font-size:12px;border:1px solid #888;line-height:1.6"><b>Agrobarriera</b><br><span style="color:#2c7fb8">●</span> birds&nbsp; <span style="color:#e8820e">●</span> butterflies<br><span style="color:#2e9e4f">●</span> plants&nbsp; <span style="color:#bdbdbd">●</span> other<br><span style="color:#00e5ff">▬</span> precise boundary</div>
+    
+            <div class="folium-map" id="map_3643a3c837ee6641a6827220e9c37f37" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_3643a3c837ee6641a6827220e9c37f37 = L.map(
+                "map_3643a3c837ee6641a6827220e9c37f37",
+                {
+                    center: [45.08903808189578, 7.702338033267949],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 18,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_29b67d6a857c214a235c139b6d38e514 = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 22,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "Esri",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_29b67d6a857c214a235c139b6d38e514.addTo(map_3643a3c837ee6641a6827220e9c37f37);
+        
+    
+        function geo_json_ae25b1cb2c72f69e7d9ed6467177fb9e_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "#00e5ff", "fill": false, "weight": 3};
+            }
+        }
+
+        function geo_json_ae25b1cb2c72f69e7d9ed6467177fb9e_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_ae25b1cb2c72f69e7d9ed6467177fb9e = L.geoJson(null, {
+                onEachFeature: geo_json_ae25b1cb2c72f69e7d9ed6467177fb9e_onEachFeature,
+            
+                style: geo_json_ae25b1cb2c72f69e7d9ed6467177fb9e_styler,
+            ...{
+}
+        });
+
+        function geo_json_ae25b1cb2c72f69e7d9ed6467177fb9e_add (data) {
+            geo_json_ae25b1cb2c72f69e7d9ed6467177fb9e
+                .addData(data);
+        }
+            geo_json_ae25b1cb2c72f69e7d9ed6467177fb9e_add({"bbox": [7.701898487175092, 45.088760854662524, 7.702759905264663, 45.08929422070789], "features": [{"bbox": [7.701898487175092, 45.088760854662524, 7.702759905264663, 45.08929422070789], "geometry": {"coordinates": [[[7.701898487175092, 45.08909258291041], [7.702536489343037, 45.08929422070789], [7.702759905264663, 45.08901615549469], [7.702202517089057, 45.088760854662524], [7.701898487175092, 45.08909258291041]]], "type": "Polygon"}, "id": "0", "properties": {"area_ha": 0.212, "city": "Torino", "id": "agrobarriera", "name": "Agrobarriera (Orto del Boschetto)"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_ae25b1cb2c72f69e7d9ed6467177fb9e.addTo(map_3643a3c837ee6641a6827220e9c37f37);
+        
+    
+            var feature_group_69251b7ba4b97e2074dcfb2a2d3fe8e2 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_7e6992826aaad8043c6091bf5ac7ad5f = L.circleMarker(
+                [45.089078, 7.702196],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_69251b7ba4b97e2074dcfb2a2d3fe8e2);
+        
+    
+        var popup_d480a086c880fa7ea2f66acc43714189 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_a76d099e13ccd90aeaeb3bbb649f73b2 = $(`<div id="html_a76d099e13ccd90aeaeb3bbb649f73b2" style="width: 100.0%; height: 100.0%;"><b><i>Nuctenea umbratica</i></b><br>Animalia / Arachnida<br>other<br>GBIF|iNaturalist · 2021-06-22</div>`)[0];
+                popup_d480a086c880fa7ea2f66acc43714189.setContent(html_a76d099e13ccd90aeaeb3bbb649f73b2);
+            
+        
+
+        circle_marker_7e6992826aaad8043c6091bf5ac7ad5f.bindPopup(popup_d480a086c880fa7ea2f66acc43714189)
+        ;
+
+        
+    
+    
+            feature_group_69251b7ba4b97e2074dcfb2a2d3fe8e2.addTo(map_3643a3c837ee6641a6827220e9c37f37);
+        
+    
+            var feature_group_3cb23552e8ee01f857a0d753f93b7151 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_e582df8b206f9170d99c78eb91edff48 = L.circleMarker(
+                [45.0897222222, 7.7025],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_3cb23552e8ee01f857a0d753f93b7151);
+        
+    
+        var popup_2af0a7a7c8bb2c8a6ea46430e55137cd = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_ce2fdb6fe1a3f33e71464c57aba8bcde = $(`<div id="html_ce2fdb6fe1a3f33e71464c57aba8bcde" style="width: 100.0%; height: 100.0%;"><b><i>Polyommatus</i></b><br>nan / nan<br>other<br>iNaturalist · </div>`)[0];
+                popup_2af0a7a7c8bb2c8a6ea46430e55137cd.setContent(html_ce2fdb6fe1a3f33e71464c57aba8bcde);
+            
+        
+
+        circle_marker_e582df8b206f9170d99c78eb91edff48.bindPopup(popup_2af0a7a7c8bb2c8a6ea46430e55137cd)
+        ;
+
+        
+    
+    
+            var circle_marker_a760d789f946d949d5089af70965c6d0 = L.circleMarker(
+                [45.0897404997, 7.7025753],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_3cb23552e8ee01f857a0d753f93b7151);
+        
+    
+        var popup_f0c689fde45215aa896cef7db089aaf2 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_4cc01a7d7afc59519b51b53bb90bf4cf = $(`<div id="html_4cc01a7d7afc59519b51b53bb90bf4cf" style="width: 100.0%; height: 100.0%;"><b><i>Polyommatus icarus</i></b><br>nan / nan<br>other<br>iNaturalist · 2020-09-30</div>`)[0];
+                popup_f0c689fde45215aa896cef7db089aaf2.setContent(html_4cc01a7d7afc59519b51b53bb90bf4cf);
+            
+        
+
+        circle_marker_a760d789f946d949d5089af70965c6d0.bindPopup(popup_f0c689fde45215aa896cef7db089aaf2)
+        ;
+
+        
+    
+    
+            var feature_group_d080f8f625dacc5aa8e89d9909debb06 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_568c42ff2eacd4f936849b2024310fb0 = L.circleMarker(
+                [45.088495, 7.703575],
+                {"bubblingMouseEvents": true, "color": "#2e9e4f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e9e4f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_d080f8f625dacc5aa8e89d9909debb06);
+        
+    
+        var popup_73166501958c3b6031adddb9614b8833 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_33f6324b9e810dffeb0e400517ea68c0 = $(`<div id="html_33f6324b9e810dffeb0e400517ea68c0" style="width: 100.0%; height: 100.0%;"><b><i>Ailanthus altissima</i></b><br>Plantae / Magnoliopsida<br>plants<br>GBIF · 2019-05-15</div>`)[0];
+                popup_73166501958c3b6031adddb9614b8833.setContent(html_33f6324b9e810dffeb0e400517ea68c0);
+            
+        
+
+        circle_marker_568c42ff2eacd4f936849b2024310fb0.bindPopup(popup_73166501958c3b6031adddb9614b8833)
+        ;
+
+        
+    
+    
+            var circle_marker_89bad66e5028524b1d617a4f2d536a15 = L.circleMarker(
+                [45.0882336, 7.7024548],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_d080f8f625dacc5aa8e89d9909debb06);
+        
+    
+        var popup_a80e9ddf6abd4a124af8e7444af05321 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_0dd770b5a94e8bf49fbe086e649899f7 = $(`<div id="html_0dd770b5a94e8bf49fbe086e649899f7" style="width: 100.0%; height: 100.0%;"><b><i>Podarcis muralis</i></b><br>nan / nan<br>other<br>iNaturalist · 2026-04-10</div>`)[0];
+                popup_a80e9ddf6abd4a124af8e7444af05321.setContent(html_0dd770b5a94e8bf49fbe086e649899f7);
+            
+        
+
+        circle_marker_89bad66e5028524b1d617a4f2d536a15.bindPopup(popup_a80e9ddf6abd4a124af8e7444af05321)
+        ;
+
+        
+    
+    
+            var feature_group_cf593777c1845762bb1965f6c844c7ca = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_7a229579f613346926cf4867846a7061 = L.circleMarker(
+                [45.0883420422, 7.704941077],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_cf593777c1845762bb1965f6c844c7ca);
+        
+    
+        var popup_ae2186190f87613062916578652d3a90 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_74425940412db50a560a35388eafa065 = $(`<div id="html_74425940412db50a560a35388eafa065" style="width: 100.0%; height: 100.0%;"><b><i>Amphimallon</i></b><br>nan / nan<br>other<br>iNaturalist · 2023-06-13</div>`)[0];
+                popup_ae2186190f87613062916578652d3a90.setContent(html_74425940412db50a560a35388eafa065);
+            
+        
+
+        circle_marker_7a229579f613346926cf4867846a7061.bindPopup(popup_ae2186190f87613062916578652d3a90)
+        ;
+
+        
+    
+    
+            var circle_marker_2f5bac8015fad73f8648857ab4c06292 = L.circleMarker(
+                [45.088493, 7.704828],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_cf593777c1845762bb1965f6c844c7ca);
+        
+    
+        var popup_29940a36308e4324e971d96af0d512da = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_04bf4bde6ada74fb73de02256304fd06 = $(`<div id="html_04bf4bde6ada74fb73de02256304fd06" style="width: 100.0%; height: 100.0%;"><b><i>Apis mellifera</i></b><br>Animalia / Insecta<br>other<br>GBIF|iNaturalist · 2023-06-14</div>`)[0];
+                popup_29940a36308e4324e971d96af0d512da.setContent(html_04bf4bde6ada74fb73de02256304fd06);
+            
+        
+
+        circle_marker_2f5bac8015fad73f8648857ab4c06292.bindPopup(popup_29940a36308e4324e971d96af0d512da)
+        ;
+
+        
+    
+    
+            var circle_marker_ee7cfd7de7c847e0a3ad02cf240e1e0d = L.circleMarker(
+                [45.0883962165, 7.7048707802],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_cf593777c1845762bb1965f6c844c7ca);
+        
+    
+        var popup_bdef28490ade7f8a2f9791e5986be77d = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_ebd4efe59a77200903aa47dcfa2f4bc3 = $(`<div id="html_ebd4efe59a77200903aa47dcfa2f4bc3" style="width: 100.0%; height: 100.0%;"><b><i>Araneomorphae</i></b><br>nan / nan<br>other<br>iNaturalist · 2023-06-12</div>`)[0];
+                popup_bdef28490ade7f8a2f9791e5986be77d.setContent(html_ebd4efe59a77200903aa47dcfa2f4bc3);
+            
+        
+
+        circle_marker_ee7cfd7de7c847e0a3ad02cf240e1e0d.bindPopup(popup_bdef28490ade7f8a2f9791e5986be77d)
+        ;
+
+        
+    
+    
+            var circle_marker_58d4b7f491420f1e5cb53116b72281a7 = L.circleMarker(
+                [45.088419, 7.704968],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_cf593777c1845762bb1965f6c844c7ca);
+        
+    
+        var popup_e50fecddf9ddd5bd99f2c1637748aeef = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_173de2918a35cfb1c4cc7ab2f24d5897 = $(`<div id="html_173de2918a35cfb1c4cc7ab2f24d5897" style="width: 100.0%; height: 100.0%;"><b><i>Armadillidium arcangelii</i></b><br>Animalia / Malacostraca<br>other<br>GBIF|iNaturalist · 2023-06-13</div>`)[0];
+                popup_e50fecddf9ddd5bd99f2c1637748aeef.setContent(html_173de2918a35cfb1c4cc7ab2f24d5897);
+            
+        
+
+        circle_marker_58d4b7f491420f1e5cb53116b72281a7.bindPopup(popup_e50fecddf9ddd5bd99f2c1637748aeef)
+        ;
+
+        
+    
+    
+            var circle_marker_27876ef84ca431ed13eb525b5f1b5521 = L.circleMarker(
+                [45.088771, 7.704765],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_cf593777c1845762bb1965f6c844c7ca);
+        
+    
+        var popup_1f9dff09c89968c7c28afe4501123cef = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_125850345ac259ead817f163815df4b8 = $(`<div id="html_125850345ac259ead817f163815df4b8" style="width: 100.0%; height: 100.0%;"><b><i>Calopteryx splendens</i></b><br>Animalia / Insecta<br>other<br>GBIF|iNaturalist · 2023-06-13</div>`)[0];
+                popup_1f9dff09c89968c7c28afe4501123cef.setContent(html_125850345ac259ead817f163815df4b8);
+            
+        
+
+        circle_marker_27876ef84ca431ed13eb525b5f1b5521.bindPopup(popup_1f9dff09c89968c7c28afe4501123cef)
+        ;
+
+        
+    
+    
+            var circle_marker_f97f4e1315fce5bb77161403f1243f47 = L.circleMarker(
+                [45.0882799506, 7.7049946678],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_cf593777c1845762bb1965f6c844c7ca);
+        
+    
+        var popup_ef31b80b52170a211f57a8f78aac7a9a = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_e0ba944375f1bf08ebd58b3a7a5b68e2 = $(`<div id="html_e0ba944375f1bf08ebd58b3a7a5b68e2" style="width: 100.0%; height: 100.0%;"><b><i>Calyptratae</i></b><br>nan / nan<br>other<br>iNaturalist · 2023-06-12</div>`)[0];
+                popup_ef31b80b52170a211f57a8f78aac7a9a.setContent(html_e0ba944375f1bf08ebd58b3a7a5b68e2);
+            
+        
+
+        circle_marker_f97f4e1315fce5bb77161403f1243f47.bindPopup(popup_ef31b80b52170a211f57a8f78aac7a9a)
+        ;
+
+        
+    
+    
+            var circle_marker_a1d53f97d1118ebf637bbdd19223366d = L.circleMarker(
+                [45.089322, 7.699822],
+                {"bubblingMouseEvents": true, "color": "#2e9e4f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e9e4f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_cf593777c1845762bb1965f6c844c7ca);
+        
+    
+        var popup_a1c9aef1295e9a912d538bf109be5049 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_00c38e51417269a196485c8e7ca8bef1 = $(`<div id="html_00c38e51417269a196485c8e7ca8bef1" style="width: 100.0%; height: 100.0%;"><b><i>Cardamine heptaphylla</i></b><br>Plantae / Magnoliopsida<br>plants<br>GBIF · 2020-02-27</div>`)[0];
+                popup_a1c9aef1295e9a912d538bf109be5049.setContent(html_00c38e51417269a196485c8e7ca8bef1);
+            
+        
+
+        circle_marker_a1d53f97d1118ebf637bbdd19223366d.bindPopup(popup_a1c9aef1295e9a912d538bf109be5049)
+        ;
+
+        
+    
+    
+            var circle_marker_c2eef0042393c468af52e3d4f2d86ed9 = L.circleMarker(
+                [45.088004, 7.704675],
+                {"bubblingMouseEvents": true, "color": "#2e9e4f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e9e4f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_cf593777c1845762bb1965f6c844c7ca);
+        
+    
+        var popup_1f936e67d7d733fce53354ba7f9a35c8 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_27dc9e6f265c02bc400c2160ff7290f3 = $(`<div id="html_27dc9e6f265c02bc400c2160ff7290f3" style="width: 100.0%; height: 100.0%;"><b><i>Carpinus betulus</i></b><br>Plantae / Magnoliopsida<br>plants<br>GBIF|iNaturalist · 2023-06-12</div>`)[0];
+                popup_1f936e67d7d733fce53354ba7f9a35c8.setContent(html_27dc9e6f265c02bc400c2160ff7290f3);
+            
+        
+
+        circle_marker_c2eef0042393c468af52e3d4f2d86ed9.bindPopup(popup_1f936e67d7d733fce53354ba7f9a35c8)
+        ;
+
+        
+    
+    
+            var circle_marker_e358386d66171c2cb0534ea65d5c0ba2 = L.circleMarker(
+                [45.088697, 7.699585],
+                {"bubblingMouseEvents": true, "color": "#2e9e4f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e9e4f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_cf593777c1845762bb1965f6c844c7ca);
+        
+    
+        var popup_dd3b24667ab383a09f89af8c3436289e = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_73e46842cdaeee1f62c9f6c205473093 = $(`<div id="html_73e46842cdaeee1f62c9f6c205473093" style="width: 100.0%; height: 100.0%;"><b><i>Cerastium glomeratum</i></b><br>Plantae / Magnoliopsida<br>plants<br>GBIF · 2020-05-29</div>`)[0];
+                popup_dd3b24667ab383a09f89af8c3436289e.setContent(html_73e46842cdaeee1f62c9f6c205473093);
+            
+        
+
+        circle_marker_e358386d66171c2cb0534ea65d5c0ba2.bindPopup(popup_dd3b24667ab383a09f89af8c3436289e)
+        ;
+
+        
+    
+    
+            var circle_marker_a30624854d379749d2c527841c315b61 = L.circleMarker(
+                [45.088515, 7.699758],
+                {"bubblingMouseEvents": true, "color": "#2e9e4f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e9e4f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_cf593777c1845762bb1965f6c844c7ca);
+        
+    
+        var popup_093348e53cc323b6b11dc101202630ae = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_6328b400be62371d5ecd953656bb8f0b = $(`<div id="html_6328b400be62371d5ecd953656bb8f0b" style="width: 100.0%; height: 100.0%;"><b><i>Chamaecyparis lawsoniana</i></b><br>Plantae / Pinopsida<br>plants<br>GBIF · 2020-05-27</div>`)[0];
+                popup_093348e53cc323b6b11dc101202630ae.setContent(html_6328b400be62371d5ecd953656bb8f0b);
+            
+        
+
+        circle_marker_a30624854d379749d2c527841c315b61.bindPopup(popup_093348e53cc323b6b11dc101202630ae)
+        ;
+
+        
+    
+    
+            var circle_marker_5005e3774abb423898dcfb13456c139f = L.circleMarker(
+                [45.089605, 7.700044],
+                {"bubblingMouseEvents": true, "color": "#2e9e4f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e9e4f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_cf593777c1845762bb1965f6c844c7ca);
+        
+    
+        var popup_c49b7755ab68f389ab502dc39d11599b = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_dcac6f6a5c48731017d089baf44f72e8 = $(`<div id="html_dcac6f6a5c48731017d089baf44f72e8" style="width: 100.0%; height: 100.0%;"><b><i>Chelidonium majus</i></b><br>Plantae / Magnoliopsida<br>plants<br>GBIF · 2019-05-22</div>`)[0];
+                popup_c49b7755ab68f389ab502dc39d11599b.setContent(html_dcac6f6a5c48731017d089baf44f72e8);
+            
+        
+
+        circle_marker_5005e3774abb423898dcfb13456c139f.bindPopup(popup_c49b7755ab68f389ab502dc39d11599b)
+        ;
+
+        
+    
+    
+            var circle_marker_4195d97aaae32dfd84d93c53cb9f3f07 = L.circleMarker(
+                [45.08962, 7.700061],
+                {"bubblingMouseEvents": true, "color": "#2e9e4f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e9e4f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_cf593777c1845762bb1965f6c844c7ca);
+        
+    
+        var popup_9d9f0971f0dc64eee8d21b9cf47618be = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_9c92e671186f0a82ed938c957ac55117 = $(`<div id="html_9c92e671186f0a82ed938c957ac55117" style="width: 100.0%; height: 100.0%;"><b><i>Chelidonium majus</i></b><br>Plantae / Magnoliopsida<br>plants<br>GBIF · 2019-05-26</div>`)[0];
+                popup_9d9f0971f0dc64eee8d21b9cf47618be.setContent(html_9c92e671186f0a82ed938c957ac55117);
+            
+        
+
+        circle_marker_4195d97aaae32dfd84d93c53cb9f3f07.bindPopup(popup_9d9f0971f0dc64eee8d21b9cf47618be)
+        ;
+
+        
+    
+    
+            var circle_marker_db833cfeac3a4d4a8d9b760f2376ab90 = L.circleMarker(
+                [45.088398, 7.704938],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_cf593777c1845762bb1965f6c844c7ca);
+        
+    
+        var popup_424e0d98b47445ac2df9b57b5ed18559 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_35b3c838f2a6bb72d4b4c9ad0a5950d4 = $(`<div id="html_35b3c838f2a6bb72d4b4c9ad0a5950d4" style="width: 100.0%; height: 100.0%;"><b><i>Coccinella septempunctata</i></b><br>Animalia / Insecta<br>other<br>GBIF|iNaturalist · 2023-06-12</div>`)[0];
+                popup_424e0d98b47445ac2df9b57b5ed18559.setContent(html_35b3c838f2a6bb72d4b4c9ad0a5950d4);
+            
+        
+
+        circle_marker_db833cfeac3a4d4a8d9b760f2376ab90.bindPopup(popup_424e0d98b47445ac2df9b57b5ed18559)
+        ;
+
+        
+    
+    
+            var circle_marker_a38bdb1f1680ded24b2a73fc385bd89e = L.circleMarker(
+                [45.088302, 7.705067],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_cf593777c1845762bb1965f6c844c7ca);
+        
+    
+        var popup_eb5e0f9411d6a3d7e20c1c909f635c1b = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_c204e123c73b09d418952002d0a7b535 = $(`<div id="html_c204e123c73b09d418952002d0a7b535" style="width: 100.0%; height: 100.0%;"><b><i>Crematogaster scutellaris</i></b><br>Animalia / Insecta<br>other<br>GBIF|iNaturalist · 2023-06-12</div>`)[0];
+                popup_eb5e0f9411d6a3d7e20c1c909f635c1b.setContent(html_c204e123c73b09d418952002d0a7b535);
+            
+        
+
+        circle_marker_a38bdb1f1680ded24b2a73fc385bd89e.bindPopup(popup_eb5e0f9411d6a3d7e20c1c909f635c1b)
+        ;
+
+        
+    
+    
+            var circle_marker_b898d57b28dc2ce9ae34b1cde68df819 = L.circleMarker(
+                [45.0880928585, 7.7046463491],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_cf593777c1845762bb1965f6c844c7ca);
+        
+    
+        var popup_8fc5d931b9e40e16487e8bdc48e3656d = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_cdc8d64a22ccac11ed7496dde9dd8db9 = $(`<div id="html_cdc8d64a22ccac11ed7496dde9dd8db9" style="width: 100.0%; height: 100.0%;"><b><i>Forficula auricularia</i></b><br>nan / nan<br>other<br>iNaturalist · 2023-06-12</div>`)[0];
+                popup_8fc5d931b9e40e16487e8bdc48e3656d.setContent(html_cdc8d64a22ccac11ed7496dde9dd8db9);
+            
+        
+
+        circle_marker_b898d57b28dc2ce9ae34b1cde68df819.bindPopup(popup_8fc5d931b9e40e16487e8bdc48e3656d)
+        ;
+
+        
+    
+    
+            var circle_marker_5395d27bc6d24f0d0b6d986438d6e10e = L.circleMarker(
+                [45.088373, 7.704884],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_cf593777c1845762bb1965f6c844c7ca);
+        
+    
+        var popup_469a07a62e636b9f3599dff11a498ac3 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_ad2a44e059f1db27df948f20e8b72e0f = $(`<div id="html_ad2a44e059f1db27df948f20e8b72e0f" style="width: 100.0%; height: 100.0%;"><b><i>Galeruca pomonae</i></b><br>Animalia / Insecta<br>other<br>GBIF|iNaturalist · 2023-06-12</div>`)[0];
+                popup_469a07a62e636b9f3599dff11a498ac3.setContent(html_ad2a44e059f1db27df948f20e8b72e0f);
+            
+        
+
+        circle_marker_5395d27bc6d24f0d0b6d986438d6e10e.bindPopup(popup_469a07a62e636b9f3599dff11a498ac3)
+        ;
+
+        
+    
+    
+            var circle_marker_dab4cd7ced3c5a8c2cea2178758c00e6 = L.circleMarker(
+                [45.088697, 7.699585],
+                {"bubblingMouseEvents": true, "color": "#2e9e4f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e9e4f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_cf593777c1845762bb1965f6c844c7ca);
+        
+    
+        var popup_f14c95e949fa1d1c1f32048404fb2cad = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_0c344b6301ed0145eb6e918a73be0e7c = $(`<div id="html_0c344b6301ed0145eb6e918a73be0e7c" style="width: 100.0%; height: 100.0%;"><b><i>Hibiscus syriacus</i></b><br>Plantae / Magnoliopsida<br>plants<br>GBIF · 2020-05-29</div>`)[0];
+                popup_f14c95e949fa1d1c1f32048404fb2cad.setContent(html_0c344b6301ed0145eb6e918a73be0e7c);
+            
+        
+
+        circle_marker_dab4cd7ced3c5a8c2cea2178758c00e6.bindPopup(popup_f14c95e949fa1d1c1f32048404fb2cad)
+        ;
+
+        
+    
+    
+            var circle_marker_be46df3bd28fe6497ecc1cfbbe7ddfa6 = L.circleMarker(
+                [45.089584, 7.700397],
+                {"bubblingMouseEvents": true, "color": "#2e9e4f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e9e4f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_cf593777c1845762bb1965f6c844c7ca);
+        
+    
+        var popup_86ec585fc37d43fccac6f21095ff0e98 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_d4bc5014feba2ebeb405b8947b244de0 = $(`<div id="html_d4bc5014feba2ebeb405b8947b244de0" style="width: 100.0%; height: 100.0%;"><b><i>Iris japonica</i></b><br>Plantae / Liliopsida<br>plants<br>GBIF · 2022-05-02</div>`)[0];
+                popup_86ec585fc37d43fccac6f21095ff0e98.setContent(html_d4bc5014feba2ebeb405b8947b244de0);
+            
+        
+
+        circle_marker_be46df3bd28fe6497ecc1cfbbe7ddfa6.bindPopup(popup_86ec585fc37d43fccac6f21095ff0e98)
+        ;
+
+        
+    
+    
+            var circle_marker_e8505794f364ee07bc432999331c4fa4 = L.circleMarker(
+                [45.087263, 7.703456],
+                {"bubblingMouseEvents": true, "color": "#2e9e4f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e9e4f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_cf593777c1845762bb1965f6c844c7ca);
+        
+    
+        var popup_8dd9aa7ff912b7c12317924fe8e587f3 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_471123335b8ce1f621ed2f9dcd9d3cc9 = $(`<div id="html_471123335b8ce1f621ed2f9dcd9d3cc9" style="width: 100.0%; height: 100.0%;"><b><i>Lavandula stoechas</i></b><br>Plantae / Magnoliopsida<br>plants<br>GBIF · 2020-05-23</div>`)[0];
+                popup_8dd9aa7ff912b7c12317924fe8e587f3.setContent(html_471123335b8ce1f621ed2f9dcd9d3cc9);
+            
+        
+
+        circle_marker_e8505794f364ee07bc432999331c4fa4.bindPopup(popup_8dd9aa7ff912b7c12317924fe8e587f3)
+        ;
+
+        
+    
+    
+            var circle_marker_ee6b1ca980ac7a087f28d275dcf33c3a = L.circleMarker(
+                [45.087565, 7.7033011],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_cf593777c1845762bb1965f6c844c7ca);
+        
+    
+        var popup_a75639fa330d80a848fb2a605ecc765f = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_91b7a3b60db147cc86ffbcc3bdda6c90 = $(`<div id="html_91b7a3b60db147cc86ffbcc3bdda6c90" style="width: 100.0%; height: 100.0%;"><b><i>Leptoglossus occidentalis</i></b><br>nan / nan<br>other<br>iNaturalist · 2026-03-19</div>`)[0];
+                popup_a75639fa330d80a848fb2a605ecc765f.setContent(html_91b7a3b60db147cc86ffbcc3bdda6c90);
+            
+        
+
+        circle_marker_ee6b1ca980ac7a087f28d275dcf33c3a.bindPopup(popup_a75639fa330d80a848fb2a605ecc765f)
+        ;
+
+        
+    
+    
+            var circle_marker_01977d331c9b050a700facf6b00df498 = L.circleMarker(
+                [45.0883350476, 7.7050790473],
+                {"bubblingMouseEvents": true, "color": "#2e9e4f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e9e4f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_cf593777c1845762bb1965f6c844c7ca);
+        
+    
+        var popup_241340f3f2d3d59c3b48e282e74e7c7e = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_7088f60d722d942441d809340fb5c4f2 = $(`<div id="html_7088f60d722d942441d809340fb5c4f2" style="width: 100.0%; height: 100.0%;"><b><i>Liquidambar styraciflua</i></b><br>Plantae / nan<br>plants<br>iNaturalist · 2023-06-12</div>`)[0];
+                popup_241340f3f2d3d59c3b48e282e74e7c7e.setContent(html_7088f60d722d942441d809340fb5c4f2);
+            
+        
+
+        circle_marker_01977d331c9b050a700facf6b00df498.bindPopup(popup_241340f3f2d3d59c3b48e282e74e7c7e)
+        ;
+
+        
+    
+    
+            var circle_marker_c22be086a497586e0f3893ae77922613 = L.circleMarker(
+                [45.0882341766, 7.7049714297],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_cf593777c1845762bb1965f6c844c7ca);
+        
+    
+        var popup_e5321c8a7d956a5072db851a764502d3 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_503d29af7bcd1baa08b143acca3c3b5b = $(`<div id="html_503d29af7bcd1baa08b143acca3c3b5b" style="width: 100.0%; height: 100.0%;"><b><i>Lumbricidae</i></b><br>nan / nan<br>other<br>iNaturalist · 2023-06-12</div>`)[0];
+                popup_e5321c8a7d956a5072db851a764502d3.setContent(html_503d29af7bcd1baa08b143acca3c3b5b);
+            
+        
+
+        circle_marker_c22be086a497586e0f3893ae77922613.bindPopup(popup_e5321c8a7d956a5072db851a764502d3)
+        ;
+
+        
+    
+    
+            var circle_marker_366b724bcd4ea38a523a831a464f3499 = L.circleMarker(
+                [45.0881274126, 7.7046883892],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_cf593777c1845762bb1965f6c844c7ca);
+        
+    
+        var popup_c662c8c015d0df7b148c40542370a6e5 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_52a1febe68e72f995593664de4381e67 = $(`<div id="html_52a1febe68e72f995593664de4381e67" style="width: 100.0%; height: 100.0%;"><b><i>Lumbricus</i></b><br>nan / nan<br>other<br>iNaturalist · 2023-06-12</div>`)[0];
+                popup_c662c8c015d0df7b148c40542370a6e5.setContent(html_52a1febe68e72f995593664de4381e67);
+            
+        
+
+        circle_marker_366b724bcd4ea38a523a831a464f3499.bindPopup(popup_c662c8c015d0df7b148c40542370a6e5)
+        ;
+
+        
+    
+    
+            var circle_marker_031f99af18df83c45a1d30930642db25 = L.circleMarker(
+                [45.0884740774, 7.7049131403],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_cf593777c1845762bb1965f6c844c7ca);
+        
+    
+        var popup_a33ff59a873734e55544c90ea0f26516 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_60d6915fd9cc8dbef5ecfd0db5d4c613 = $(`<div id="html_60d6915fd9cc8dbef5ecfd0db5d4c613" style="width: 100.0%; height: 100.0%;"><b><i>Monacha</i></b><br>nan / nan<br>other<br>iNaturalist · 2023-06-12</div>`)[0];
+                popup_a33ff59a873734e55544c90ea0f26516.setContent(html_60d6915fd9cc8dbef5ecfd0db5d4c613);
+            
+        
+
+        circle_marker_031f99af18df83c45a1d30930642db25.bindPopup(popup_a33ff59a873734e55544c90ea0f26516)
+        ;
+
+        
+    
+    
+            var circle_marker_43fd2ac6e83e19e9378b2232d92ddcde = L.circleMarker(
+                [45.0882602531, 7.6999550888],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_cf593777c1845762bb1965f6c844c7ca);
+        
+    
+        var popup_7048742d089a16197ecd6a73d44da4f0 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_692447632af63204d046c942e5f57800 = $(`<div id="html_692447632af63204d046c942e5f57800" style="width: 100.0%; height: 100.0%;"><b><i>nan</i></b><br>nan / nan<br>other<br>iNaturalist · 2019-09-01</div>`)[0];
+                popup_7048742d089a16197ecd6a73d44da4f0.setContent(html_692447632af63204d046c942e5f57800);
+            
+        
+
+        circle_marker_43fd2ac6e83e19e9378b2232d92ddcde.bindPopup(popup_7048742d089a16197ecd6a73d44da4f0)
+        ;
+
+        
+    
+    
+            var circle_marker_98a184e9e16f49e324404b7da970f347 = L.circleMarker(
+                [45.0886938396, 7.7047633533],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_cf593777c1845762bb1965f6c844c7ca);
+        
+    
+        var popup_45272d966fc411dffc8b92651aa06e8b = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_67a8affbdfd81de3ecfb6aef5fb88f47 = $(`<div id="html_67a8affbdfd81de3ecfb6aef5fb88f47" style="width: 100.0%; height: 100.0%;"><b><i>Pholcidae</i></b><br>nan / nan<br>other<br>iNaturalist · 2023-06-13</div>`)[0];
+                popup_45272d966fc411dffc8b92651aa06e8b.setContent(html_67a8affbdfd81de3ecfb6aef5fb88f47);
+            
+        
+
+        circle_marker_98a184e9e16f49e324404b7da970f347.bindPopup(popup_45272d966fc411dffc8b92651aa06e8b)
+        ;
+
+        
+    
+    
+            var circle_marker_c7dd7d492c1707565750ca55195705b5 = L.circleMarker(
+                [45.0887331349, 7.7047683391],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_cf593777c1845762bb1965f6c844c7ca);
+        
+    
+        var popup_2b26dd7faef3f0e0ce54c5286d0a61fc = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_779376e7133b8ec5053daa5a550e1d6d = $(`<div id="html_779376e7133b8ec5053daa5a550e1d6d" style="width: 100.0%; height: 100.0%;"><b><i>Pholcus phalangioides</i></b><br>nan / nan<br>other<br>iNaturalist · 2023-06-13</div>`)[0];
+                popup_2b26dd7faef3f0e0ce54c5286d0a61fc.setContent(html_779376e7133b8ec5053daa5a550e1d6d);
+            
+        
+
+        circle_marker_c7dd7d492c1707565750ca55195705b5.bindPopup(popup_2b26dd7faef3f0e0ce54c5286d0a61fc)
+        ;
+
+        
+    
+    
+            var circle_marker_d14b09ec6c6be232cd020e3d5671ff98 = L.circleMarker(
+                [45.08816, 7.704754],
+                {"bubblingMouseEvents": true, "color": "#e8820e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e8820e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_cf593777c1845762bb1965f6c844c7ca);
+        
+    
+        var popup_9e4f39bd0924e0117d1e0c3b78ed9ac7 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_e0f373eb7b93d39d2329ed5bc45b08eb = $(`<div id="html_e0f373eb7b93d39d2329ed5bc45b08eb" style="width: 100.0%; height: 100.0%;"><b><i>Pieris napi</i></b><br>Animalia / Insecta<br>butterflies_moths<br>GBIF|iNaturalist · 2023-06-12</div>`)[0];
+                popup_9e4f39bd0924e0117d1e0c3b78ed9ac7.setContent(html_e0f373eb7b93d39d2329ed5bc45b08eb);
+            
+        
+
+        circle_marker_d14b09ec6c6be232cd020e3d5671ff98.bindPopup(popup_9e4f39bd0924e0117d1e0c3b78ed9ac7)
+        ;
+
+        
+    
+    
+            var circle_marker_745634757a59933ffd42ceedd0c87c3d = L.circleMarker(
+                [45.0883078052, 7.7048364767],
+                {"bubblingMouseEvents": true, "color": "#2e9e4f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e9e4f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_cf593777c1845762bb1965f6c844c7ca);
+        
+    
+        var popup_83311f5e035974531215867952dafe41 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_8d4c3519004de50b358aecb541b2dd1b = $(`<div id="html_8d4c3519004de50b358aecb541b2dd1b" style="width: 100.0%; height: 100.0%;"><b><i>Pinaceae</i></b><br>Plantae / nan<br>plants<br>iNaturalist · 2023-06-12</div>`)[0];
+                popup_83311f5e035974531215867952dafe41.setContent(html_8d4c3519004de50b358aecb541b2dd1b);
+            
+        
+
+        circle_marker_745634757a59933ffd42ceedd0c87c3d.bindPopup(popup_83311f5e035974531215867952dafe41)
+        ;
+
+        
+    
+    
+            var circle_marker_ceea6760e7d650da865bcbfb5e9dc8dc = L.circleMarker(
+                [45.090052, 7.701628],
+                {"bubblingMouseEvents": true, "color": "#2e9e4f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e9e4f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_cf593777c1845762bb1965f6c844c7ca);
+        
+    
+        var popup_8792103fcee253f72245819a872f0ac6 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_fe1db2ffc5fd17c3ff2ad0a5af76a44c = $(`<div id="html_fe1db2ffc5fd17c3ff2ad0a5af76a44c" style="width: 100.0%; height: 100.0%;"><b><i>Pinus mugo</i></b><br>Plantae / Pinopsida<br>plants<br>GBIF · 2020-05-28</div>`)[0];
+                popup_8792103fcee253f72245819a872f0ac6.setContent(html_fe1db2ffc5fd17c3ff2ad0a5af76a44c);
+            
+        
+
+        circle_marker_ceea6760e7d650da865bcbfb5e9dc8dc.bindPopup(popup_8792103fcee253f72245819a872f0ac6)
+        ;
+
+        
+    
+    
+            var circle_marker_c24ae7e8654d58aa40f72265f90f1069 = L.circleMarker(
+                [45.0876533, 7.7037315],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_cf593777c1845762bb1965f6c844c7ca);
+        
+    
+        var popup_ca29648f998f52a025807fe11334dc8b = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_e74bd9ab466e3f01ca12ac57e6e4079c = $(`<div id="html_e74bd9ab466e3f01ca12ac57e6e4079c" style="width: 100.0%; height: 100.0%;"><b><i>Podarcis muralis</i></b><br>nan / nan<br>other<br>iNaturalist · 2026-04-10</div>`)[0];
+                popup_ca29648f998f52a025807fe11334dc8b.setContent(html_e74bd9ab466e3f01ca12ac57e6e4079c);
+            
+        
+
+        circle_marker_c24ae7e8654d58aa40f72265f90f1069.bindPopup(popup_ca29648f998f52a025807fe11334dc8b)
+        ;
+
+        
+    
+    
+            var circle_marker_635eac70ee3ad6b6c077a8992571356c = L.circleMarker(
+                [45.088161, 7.704782],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_cf593777c1845762bb1965f6c844c7ca);
+        
+    
+        var popup_2cb0042f5be065bb5feb04fa9ab34aa6 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_ee23de011ca17d078bc3f73f2a6e3fd9 = $(`<div id="html_ee23de011ca17d078bc3f73f2a6e3fd9" style="width: 100.0%; height: 100.0%;"><b><i>Sciurus carolinensis</i></b><br>Animalia / Mammalia<br>other<br>GBIF|iNaturalist · 2023-06-13</div>`)[0];
+                popup_2cb0042f5be065bb5feb04fa9ab34aa6.setContent(html_ee23de011ca17d078bc3f73f2a6e3fd9);
+            
+        
+
+        circle_marker_635eac70ee3ad6b6c077a8992571356c.bindPopup(popup_2cb0042f5be065bb5feb04fa9ab34aa6)
+        ;
+
+        
+    
+    
+            var circle_marker_8667fa156afbb7f491ad13ae4ddd4c5e = L.circleMarker(
+                [45.0879588, 7.6999902],
+                {"bubblingMouseEvents": true, "color": "#2e9e4f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e9e4f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_cf593777c1845762bb1965f6c844c7ca);
+        
+    
+        var popup_efe4a3b743d9c750da183a292e9b1c24 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_23608e528a5c52609d000cf74cffd2d2 = $(`<div id="html_23608e528a5c52609d000cf74cffd2d2" style="width: 100.0%; height: 100.0%;"><b><i>Solanum pseudocapsicum</i></b><br>Plantae / nan<br>plants<br>iNaturalist · 2019-09-01</div>`)[0];
+                popup_efe4a3b743d9c750da183a292e9b1c24.setContent(html_23608e528a5c52609d000cf74cffd2d2);
+            
+        
+
+        circle_marker_8667fa156afbb7f491ad13ae4ddd4c5e.bindPopup(popup_efe4a3b743d9c750da183a292e9b1c24)
+        ;
+
+        
+    
+    
+            var circle_marker_14f682b1ef32061242c83e6b182887eb = L.circleMarker(
+                [45.088068, 7.7000329],
+                {"bubblingMouseEvents": true, "color": "#2e9e4f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e9e4f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_cf593777c1845762bb1965f6c844c7ca);
+        
+    
+        var popup_51e72e9502c103a5659c9b82a144c66e = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_fc320fde12d6269e7fb96cf4a3f81113 = $(`<div id="html_fc320fde12d6269e7fb96cf4a3f81113" style="width: 100.0%; height: 100.0%;"><b><i>Stapelia</i></b><br>Plantae / nan<br>plants<br>iNaturalist · 2019-09-01</div>`)[0];
+                popup_51e72e9502c103a5659c9b82a144c66e.setContent(html_fc320fde12d6269e7fb96cf4a3f81113);
+            
+        
+
+        circle_marker_14f682b1ef32061242c83e6b182887eb.bindPopup(popup_51e72e9502c103a5659c9b82a144c66e)
+        ;
+
+        
+    
+    
+            var circle_marker_e2cfb26e58fdb0c81f52d3ecadb86337 = L.circleMarker(
+                [45.0887383165, 7.7047664529],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_cf593777c1845762bb1965f6c844c7ca);
+        
+    
+        var popup_3dee11d583b2460ec9557a3ef4368ebf = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_6ce8b2125d65aad9c9d22d6e71680cd1 = $(`<div id="html_6ce8b2125d65aad9c9d22d6e71680cd1" style="width: 100.0%; height: 100.0%;"><b><i>Supella longipalpa</i></b><br>nan / nan<br>other<br>iNaturalist · 2023-06-13</div>`)[0];
+                popup_3dee11d583b2460ec9557a3ef4368ebf.setContent(html_6ce8b2125d65aad9c9d22d6e71680cd1);
+            
+        
+
+        circle_marker_e2cfb26e58fdb0c81f52d3ecadb86337.bindPopup(popup_3dee11d583b2460ec9557a3ef4368ebf)
+        ;
+
+        
+    
+    
+            var circle_marker_3602c99f9d82448d3685446f2bf6cf6f = L.circleMarker(
+                [45.088146, 7.704654],
+                {"bubblingMouseEvents": true, "color": "#2e9e4f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e9e4f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_cf593777c1845762bb1965f6c844c7ca);
+        
+    
+        var popup_8f5a5844f8b4dc1eb1b8320f00a6bf4d = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_d72311661d114fef29f68442e5571ee5 = $(`<div id="html_d72311661d114fef29f68442e5571ee5" style="width: 100.0%; height: 100.0%;"><b><i>Taraxacum officinale</i></b><br>Plantae / Magnoliopsida<br>plants<br>GBIF|iNaturalist · 2023-06-12</div>`)[0];
+                popup_8f5a5844f8b4dc1eb1b8320f00a6bf4d.setContent(html_d72311661d114fef29f68442e5571ee5);
+            
+        
+
+        circle_marker_3602c99f9d82448d3685446f2bf6cf6f.bindPopup(popup_8f5a5844f8b4dc1eb1b8320f00a6bf4d)
+        ;
+
+        
+    
+    
+            var circle_marker_40dc767a8906e1f5e7454a125d5c80c6 = L.circleMarker(
+                [45.08718172, 7.7013085655],
+                {"bubblingMouseEvents": true, "color": "#2e9e4f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e9e4f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_cf593777c1845762bb1965f6c844c7ca);
+        
+    
+        var popup_53964581640fe4a602187eacc3c24d40 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_d7a230fec4c4b6cb56f1770f2ec8ddca = $(`<div id="html_d7a230fec4c4b6cb56f1770f2ec8ddca" style="width: 100.0%; height: 100.0%;"><b><i>Trifolium alpestre</i></b><br>Plantae / nan<br>plants<br>iNaturalist · 2024-06-11</div>`)[0];
+                popup_53964581640fe4a602187eacc3c24d40.setContent(html_d7a230fec4c4b6cb56f1770f2ec8ddca);
+            
+        
+
+        circle_marker_40dc767a8906e1f5e7454a125d5c80c6.bindPopup(popup_53964581640fe4a602187eacc3c24d40)
+        ;
+
+        
+    
+    
+            var circle_marker_b1d30f446324aba58fd17fdcce92d4ba = L.circleMarker(
+                [45.087311, 7.703561],
+                {"bubblingMouseEvents": true, "color": "#2e9e4f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e9e4f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_cf593777c1845762bb1965f6c844c7ca);
+        
+    
+        var popup_6b46f5f6fec4cf6c0c3a17a46f7a5dd0 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_df20957713cdb7e96066bf46606c4e75 = $(`<div id="html_df20957713cdb7e96066bf46606c4e75" style="width: 100.0%; height: 100.0%;"><b><i>Trifolium pratense</i></b><br>Plantae / Magnoliopsida<br>plants<br>GBIF · 2020-05-22</div>`)[0];
+                popup_6b46f5f6fec4cf6c0c3a17a46f7a5dd0.setContent(html_df20957713cdb7e96066bf46606c4e75);
+            
+        
+
+        circle_marker_b1d30f446324aba58fd17fdcce92d4ba.bindPopup(popup_6b46f5f6fec4cf6c0c3a17a46f7a5dd0)
+        ;
+
+        
+    
+    
+            var circle_marker_b59a486fb43cc139b835984d6908c163 = L.circleMarker(
+                [45.088393, 7.704788],
+                {"bubblingMouseEvents": true, "color": "#2e9e4f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e9e4f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_cf593777c1845762bb1965f6c844c7ca);
+        
+    
+        var popup_4e1a49b2d26d3aae07287c0cc7a84d73 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_237ae7a5174ec5bf6ea0000d60763193 = $(`<div id="html_237ae7a5174ec5bf6ea0000d60763193" style="width: 100.0%; height: 100.0%;"><b><i>Trifolium pratense</i></b><br>Plantae / Magnoliopsida<br>plants<br>GBIF|iNaturalist · 2023-06-12</div>`)[0];
+                popup_4e1a49b2d26d3aae07287c0cc7a84d73.setContent(html_237ae7a5174ec5bf6ea0000d60763193);
+            
+        
+
+        circle_marker_b59a486fb43cc139b835984d6908c163.bindPopup(popup_4e1a49b2d26d3aae07287c0cc7a84d73)
+        ;
+
+        
+    
+    
+            var feature_group_26c577c9be7ea154c7b1334207c86c16 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_2b6bc8ad953acff82d74ffabb68d139b = L.circleMarker(
+                [45.0890471667, 7.69845],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_26c577c9be7ea154c7b1334207c86c16);
+        
+    
+        var popup_c7f2aca3ded81efa23db2e34824ed04f = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_1cdff994e15bbe71de16de23c81969bc = $(`<div id="html_1cdff994e15bbe71de16de23c81969bc" style="width: 100.0%; height: 100.0%;"><b><i>Anthophila</i></b><br>nan / nan<br>other<br>iNaturalist · 2024-06-07</div>`)[0];
+                popup_c7f2aca3ded81efa23db2e34824ed04f.setContent(html_1cdff994e15bbe71de16de23c81969bc);
+            
+        
+
+        circle_marker_2b6bc8ad953acff82d74ffabb68d139b.bindPopup(popup_c7f2aca3ded81efa23db2e34824ed04f)
+        ;
+
+        
+    
+    
+            var circle_marker_1f21456be0779bd5932a432b7df6f154 = L.circleMarker(
+                [45.088948, 7.705439],
+                {"bubblingMouseEvents": true, "color": "#2c7fb8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2c7fb8", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_26c577c9be7ea154c7b1334207c86c16);
+        
+    
+        var popup_7e025d1b5779ed58a24eed855a904dad = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_2eaf754d0363b831af6b4acc860aa3df = $(`<div id="html_2eaf754d0363b831af6b4acc860aa3df" style="width: 100.0%; height: 100.0%;"><b><i>Columba palumbus</i></b><br>Animalia / Aves<br>birds<br>GBIF|iNaturalist · 2025-10-09</div>`)[0];
+                popup_7e025d1b5779ed58a24eed855a904dad.setContent(html_2eaf754d0363b831af6b4acc860aa3df);
+            
+        
+
+        circle_marker_1f21456be0779bd5932a432b7df6f154.bindPopup(popup_7e025d1b5779ed58a24eed855a904dad)
+        ;
+
+        
+    
+    
+            var circle_marker_ddff86204b065cf48e278ace155f78b7 = L.circleMarker(
+                [45.087539, 7.704653],
+                {"bubblingMouseEvents": true, "color": "#2e9e4f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e9e4f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_26c577c9be7ea154c7b1334207c86c16);
+        
+    
+        var popup_eea638252e98105e98bf316f2d0021b3 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_8b63da85ce0c35ee759d62a1129411b8 = $(`<div id="html_8b63da85ce0c35ee759d62a1129411b8" style="width: 100.0%; height: 100.0%;"><b><i>Cotoneaster coriaceus</i></b><br>Plantae / Magnoliopsida<br>plants<br>GBIF · 2020-05-22</div>`)[0];
+                popup_eea638252e98105e98bf316f2d0021b3.setContent(html_8b63da85ce0c35ee759d62a1129411b8);
+            
+        
+
+        circle_marker_ddff86204b065cf48e278ace155f78b7.bindPopup(popup_eea638252e98105e98bf316f2d0021b3)
+        ;
+
+        
+    
+    
+            var circle_marker_dc23ce416203808ff44c0d9e76931570 = L.circleMarker(
+                [45.0881692144, 7.7050185584],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_26c577c9be7ea154c7b1334207c86c16);
+        
+    
+        var popup_fad18f1c12f1793725cd15140d8a6d31 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_b97b0441e0be3b2e8bd67427cf41a8af = $(`<div id="html_b97b0441e0be3b2e8bd67427cf41a8af" style="width: 100.0%; height: 100.0%;"><b><i>Desarmillaria tabescens</i></b><br>nan / nan<br>other<br>iNaturalist · 2023-06-12</div>`)[0];
+                popup_fad18f1c12f1793725cd15140d8a6d31.setContent(html_b97b0441e0be3b2e8bd67427cf41a8af);
+            
+        
+
+        circle_marker_dc23ce416203808ff44c0d9e76931570.bindPopup(popup_fad18f1c12f1793725cd15140d8a6d31)
+        ;
+
+        
+    
+    
+            var circle_marker_e2035ea6805b5fa25a16bbffff2870f0 = L.circleMarker(
+                [45.0911111667, 7.6993866667],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_26c577c9be7ea154c7b1334207c86c16);
+        
+    
+        var popup_00efaacd6860ae47ce7c775182b7b5a6 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_17b6d37c3407c42a6c8c23f332bc594c = $(`<div id="html_17b6d37c3407c42a6c8c23f332bc594c" style="width: 100.0%; height: 100.0%;"><b><i>Dysgonia algira</i></b><br>nan / nan<br>other<br>iNaturalist · 2023-10-05</div>`)[0];
+                popup_00efaacd6860ae47ce7c775182b7b5a6.setContent(html_17b6d37c3407c42a6c8c23f332bc594c);
+            
+        
+
+        circle_marker_e2035ea6805b5fa25a16bbffff2870f0.bindPopup(popup_00efaacd6860ae47ce7c775182b7b5a6)
+        ;
+
+        
+    
+    
+            var circle_marker_4108521b86444704182e25ca972fa9f4 = L.circleMarker(
+                [45.0882546499, 7.7052450216],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_26c577c9be7ea154c7b1334207c86c16);
+        
+    
+        var popup_5c4813d54ea7d413800c1e1996cbfc2a = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_135942386cdc5de5f3eb0fd23ff96c2f = $(`<div id="html_135942386cdc5de5f3eb0fd23ff96c2f" style="width: 100.0%; height: 100.0%;"><b><i>Hydnum repandum</i></b><br>nan / nan<br>other<br>iNaturalist · 2023-06-12</div>`)[0];
+                popup_5c4813d54ea7d413800c1e1996cbfc2a.setContent(html_135942386cdc5de5f3eb0fd23ff96c2f);
+            
+        
+
+        circle_marker_4108521b86444704182e25ca972fa9f4.bindPopup(popup_5c4813d54ea7d413800c1e1996cbfc2a)
+        ;
+
+        
+    
+    
+            var circle_marker_2b4ace749548785e8a86fff2afca1921 = L.circleMarker(
+                [45.08826, 7.699595],
+                {"bubblingMouseEvents": true, "color": "#2e9e4f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e9e4f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_26c577c9be7ea154c7b1334207c86c16);
+        
+    
+        var popup_cc4ed4d9fb39c3b61b6327887cf64d4b = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_f6b16262883d510518d7ec7ef10afb76 = $(`<div id="html_f6b16262883d510518d7ec7ef10afb76" style="width: 100.0%; height: 100.0%;"><b><i>Lactuca serriola</i></b><br>Plantae / Magnoliopsida<br>plants<br>GBIF · 2020-05-29</div>`)[0];
+                popup_cc4ed4d9fb39c3b61b6327887cf64d4b.setContent(html_f6b16262883d510518d7ec7ef10afb76);
+            
+        
+
+        circle_marker_2b4ace749548785e8a86fff2afca1921.bindPopup(popup_cc4ed4d9fb39c3b61b6327887cf64d4b)
+        ;
+
+        
+    
+    
+            var circle_marker_9f677a6eead1cadc85be28dc2d1ca355 = L.circleMarker(
+                [45.0882792375, 7.7053247754],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_26c577c9be7ea154c7b1334207c86c16);
+        
+    
+        var popup_327fa68e6ce40471410be5d4e68297c4 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_6291afb9af8b2c53f881a67f497b9808 = $(`<div id="html_6291afb9af8b2c53f881a67f497b9808" style="width: 100.0%; height: 100.0%;"><b><i>Monacha cartusiana</i></b><br>nan / nan<br>other<br>iNaturalist · 2023-06-12</div>`)[0];
+                popup_327fa68e6ce40471410be5d4e68297c4.setContent(html_6291afb9af8b2c53f881a67f497b9808);
+            
+        
+
+        circle_marker_9f677a6eead1cadc85be28dc2d1ca355.bindPopup(popup_327fa68e6ce40471410be5d4e68297c4)
+        ;
+
+        
+    
+    
+            var circle_marker_a629a3f62415616c2d020d2748fe2d35 = L.circleMarker(
+                [45.088307, 7.705278],
+                {"bubblingMouseEvents": true, "color": "#2e9e4f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e9e4f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_26c577c9be7ea154c7b1334207c86c16);
+        
+    
+        var popup_7c1430bd04b24f987548601480baf039 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_86bca8b05e719a383039add69ccbe6a0 = $(`<div id="html_86bca8b05e719a383039add69ccbe6a0" style="width: 100.0%; height: 100.0%;"><b><i>Oxalis articulata</i></b><br>Plantae / Magnoliopsida<br>plants<br>GBIF|iNaturalist · 2023-06-12</div>`)[0];
+                popup_7c1430bd04b24f987548601480baf039.setContent(html_86bca8b05e719a383039add69ccbe6a0);
+            
+        
+
+        circle_marker_a629a3f62415616c2d020d2748fe2d35.bindPopup(popup_7c1430bd04b24f987548601480baf039)
+        ;
+
+        
+    
+    
+            var circle_marker_af1febc635c7403f6b67b668eb655101 = L.circleMarker(
+                [45.088421, 7.698667],
+                {"bubblingMouseEvents": true, "color": "#2e9e4f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e9e4f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_26c577c9be7ea154c7b1334207c86c16);
+        
+    
+        var popup_4be8cbee3df21c009b32a4c9ba43fd67 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_f6dce8bdc581f06a83666d433a61b1d6 = $(`<div id="html_f6dce8bdc581f06a83666d433a61b1d6" style="width: 100.0%; height: 100.0%;"><b><i>Passiflora caerulea</i></b><br>Plantae / Magnoliopsida<br>plants<br>GBIF · 2022-09-12</div>`)[0];
+                popup_4be8cbee3df21c009b32a4c9ba43fd67.setContent(html_f6dce8bdc581f06a83666d433a61b1d6);
+            
+        
+
+        circle_marker_af1febc635c7403f6b67b668eb655101.bindPopup(popup_4be8cbee3df21c009b32a4c9ba43fd67)
+        ;
+
+        
+    
+    
+            var circle_marker_f01ede0a7d08cbb0e5dbbc59198f58dc = L.circleMarker(
+                [45.086856, 7.702987],
+                {"bubblingMouseEvents": true, "color": "#2e9e4f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e9e4f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_26c577c9be7ea154c7b1334207c86c16);
+        
+    
+        var popup_d9cba73bd36dccb09a6d62bc809042ad = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_1805741d487cfe5f4c9257734f46e0a5 = $(`<div id="html_1805741d487cfe5f4c9257734f46e0a5" style="width: 100.0%; height: 100.0%;"><b><i>Philadelphus coronarius</i></b><br>Plantae / Magnoliopsida<br>plants<br>GBIF · 2020-06-04</div>`)[0];
+                popup_d9cba73bd36dccb09a6d62bc809042ad.setContent(html_1805741d487cfe5f4c9257734f46e0a5);
+            
+        
+
+        circle_marker_f01ede0a7d08cbb0e5dbbc59198f58dc.bindPopup(popup_d9cba73bd36dccb09a6d62bc809042ad)
+        ;
+
+        
+    
+    
+            var circle_marker_a3d1aa2b027f741cfe759de51780a78a = L.circleMarker(
+                [45.086898, 7.702986],
+                {"bubblingMouseEvents": true, "color": "#2e9e4f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e9e4f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_26c577c9be7ea154c7b1334207c86c16);
+        
+    
+        var popup_6c4af7d43550509c043930cda648bcd6 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_1dc7f991dc622ce653ec98fbdff5171d = $(`<div id="html_1dc7f991dc622ce653ec98fbdff5171d" style="width: 100.0%; height: 100.0%;"><b><i>Philadelphus coronarius</i></b><br>Plantae / Magnoliopsida<br>plants<br>GBIF · 2021-05-25</div>`)[0];
+                popup_6c4af7d43550509c043930cda648bcd6.setContent(html_1dc7f991dc622ce653ec98fbdff5171d);
+            
+        
+
+        circle_marker_a3d1aa2b027f741cfe759de51780a78a.bindPopup(popup_6c4af7d43550509c043930cda648bcd6)
+        ;
+
+        
+    
+    
+            var circle_marker_5a02fd5a7125fcc0ce053df681457e73 = L.circleMarker(
+                [45.090931, 7.701388],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_26c577c9be7ea154c7b1334207c86c16);
+        
+    
+        var popup_b2ded7ef72d9599f1688d1d350264deb = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_cfe00e9a8ca9f8ded5182acb814a4c25 = $(`<div id="html_cfe00e9a8ca9f8ded5182acb814a4c25" style="width: 100.0%; height: 100.0%;"><b><i>Podarcis muralis</i></b><br>Animalia / Squamata<br>other<br>GBIF|iNaturalist · 2024-04-13</div>`)[0];
+                popup_b2ded7ef72d9599f1688d1d350264deb.setContent(html_cfe00e9a8ca9f8ded5182acb814a4c25);
+            
+        
+
+        circle_marker_5a02fd5a7125fcc0ce053df681457e73.bindPopup(popup_b2ded7ef72d9599f1688d1d350264deb)
+        ;
+
+        
+    
+    
+            var circle_marker_545e8f794a8da3c1d9ea5c74393a7c66 = L.circleMarker(
+                [45.0883718891, 7.7052565179],
+                {"bubblingMouseEvents": true, "color": "#2e9e4f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e9e4f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_26c577c9be7ea154c7b1334207c86c16);
+        
+    
+        var popup_6662b970897af5113f673a995e2d9e85 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_e0329f7aec16586290d935ee56c0fc79 = $(`<div id="html_e0329f7aec16586290d935ee56c0fc79" style="width: 100.0%; height: 100.0%;"><b><i>Prunus</i></b><br>Plantae / nan<br>plants<br>iNaturalist · 2023-06-12</div>`)[0];
+                popup_6662b970897af5113f673a995e2d9e85.setContent(html_e0329f7aec16586290d935ee56c0fc79);
+            
+        
+
+        circle_marker_545e8f794a8da3c1d9ea5c74393a7c66.bindPopup(popup_6662b970897af5113f673a995e2d9e85)
+        ;
+
+        
+    
+    
+            var circle_marker_e9abd777803a72d95a616dca203783bb = L.circleMarker(
+                [45.086856, 7.702987],
+                {"bubblingMouseEvents": true, "color": "#2e9e4f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e9e4f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_26c577c9be7ea154c7b1334207c86c16);
+        
+    
+        var popup_b37d0e107dd0e49f55aae5e228fec765 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_7db7e5a8f28a70110296561f3b69c285 = $(`<div id="html_7db7e5a8f28a70110296561f3b69c285" style="width: 100.0%; height: 100.0%;"><b><i>Prunus domestica</i></b><br>Plantae / Magnoliopsida<br>plants<br>GBIF · 2020-06-04</div>`)[0];
+                popup_b37d0e107dd0e49f55aae5e228fec765.setContent(html_7db7e5a8f28a70110296561f3b69c285);
+            
+        
+
+        circle_marker_e9abd777803a72d95a616dca203783bb.bindPopup(popup_b37d0e107dd0e49f55aae5e228fec765)
+        ;
+
+        
+    
+    
+            var circle_marker_c9d6facd8cccb5563a7e66de4eb5b0ad = L.circleMarker(
+                [45.086397, 7.703897],
+                {"bubblingMouseEvents": true, "color": "#2e9e4f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e9e4f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_26c577c9be7ea154c7b1334207c86c16);
+        
+    
+        var popup_010d84cb864663f60abdebcd5249e186 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_bdfbb6bf333f810ba1434102ea663a61 = $(`<div id="html_bdfbb6bf333f810ba1434102ea663a61" style="width: 100.0%; height: 100.0%;"><b><i>Prunus laurocerasus</i></b><br>Plantae / Magnoliopsida<br>plants<br>GBIF · 2023-04-17</div>`)[0];
+                popup_010d84cb864663f60abdebcd5249e186.setContent(html_bdfbb6bf333f810ba1434102ea663a61);
+            
+        
+
+        circle_marker_c9d6facd8cccb5563a7e66de4eb5b0ad.bindPopup(popup_010d84cb864663f60abdebcd5249e186)
+        ;
+
+        
+    
+    
+            var circle_marker_9a298c43da4137eeefae06393628b75f = L.circleMarker(
+                [45.088194, 7.705058],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_26c577c9be7ea154c7b1334207c86c16);
+        
+    
+        var popup_1ffeff9e85ae463bd479007bf0fb1ee9 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_fe2351e433a7cc115c241cd88361106c = $(`<div id="html_fe2351e433a7cc115c241cd88361106c" style="width: 100.0%; height: 100.0%;"><b><i>Pyrrhocoris apterus</i></b><br>Animalia / Insecta<br>other<br>GBIF|iNaturalist · 2023-06-12</div>`)[0];
+                popup_1ffeff9e85ae463bd479007bf0fb1ee9.setContent(html_fe2351e433a7cc115c241cd88361106c);
+            
+        
+
+        circle_marker_9a298c43da4137eeefae06393628b75f.bindPopup(popup_1ffeff9e85ae463bd479007bf0fb1ee9)
+        ;
+
+        
+    
+    
+            var circle_marker_bfc1e5e5f86faafe077be0bcd1cb5def = L.circleMarker(
+                [45.088369, 7.699425],
+                {"bubblingMouseEvents": true, "color": "#2e9e4f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e9e4f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_26c577c9be7ea154c7b1334207c86c16);
+        
+    
+        var popup_adee94b78cf3ff253e334d20950c3dd4 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_b001068c29319b655abd613ec46258e0 = $(`<div id="html_b001068c29319b655abd613ec46258e0" style="width: 100.0%; height: 100.0%;"><b><i>Reseda lutea</i></b><br>Plantae / Magnoliopsida<br>plants<br>GBIF · 2020-05-29</div>`)[0];
+                popup_adee94b78cf3ff253e334d20950c3dd4.setContent(html_b001068c29319b655abd613ec46258e0);
+            
+        
+
+        circle_marker_bfc1e5e5f86faafe077be0bcd1cb5def.bindPopup(popup_adee94b78cf3ff253e334d20950c3dd4)
+        ;
+
+        
+    
+    
+            var circle_marker_dbdae232f8b13402dc39bd2f9ab88e7e = L.circleMarker(
+                [45.088282, 7.705203],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_26c577c9be7ea154c7b1334207c86c16);
+        
+    
+        var popup_881ef0c762174c13dac2e14d5bd96728 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_1f68c257f4b0c2c6ae49f715224aee38 = $(`<div id="html_1f68c257f4b0c2c6ae49f715224aee38" style="width: 100.0%; height: 100.0%;"><b><i>Sciurus carolinensis</i></b><br>Animalia / Mammalia<br>other<br>GBIF|iNaturalist · 2023-06-12</div>`)[0];
+                popup_881ef0c762174c13dac2e14d5bd96728.setContent(html_1f68c257f4b0c2c6ae49f715224aee38);
+            
+        
+
+        circle_marker_dbdae232f8b13402dc39bd2f9ab88e7e.bindPopup(popup_881ef0c762174c13dac2e14d5bd96728)
+        ;
+
+        
+    
+    
+            var circle_marker_16da9498123d68538bcc913f0fd44203 = L.circleMarker(
+                [45.0867034766, 7.7000014856],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_26c577c9be7ea154c7b1334207c86c16);
+        
+    
+        var popup_8cfc3b986c0027b66ef13120e8bf8405 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_e65bb048cbb4e1fbe19bbd27ad8e629d = $(`<div id="html_e65bb048cbb4e1fbe19bbd27ad8e629d" style="width: 100.0%; height: 100.0%;"><b><i>Tarentola mauritanica</i></b><br>nan / nan<br>other<br>iNaturalist · </div>`)[0];
+                popup_8cfc3b986c0027b66ef13120e8bf8405.setContent(html_e65bb048cbb4e1fbe19bbd27ad8e629d);
+            
+        
+
+        circle_marker_16da9498123d68538bcc913f0fd44203.bindPopup(popup_8cfc3b986c0027b66ef13120e8bf8405)
+        ;
+
+        
+    
+    
+            var circle_marker_6067e28a28ba7f4a95076e67417639b1 = L.circleMarker(
+                [45.087331, 7.704442],
+                {"bubblingMouseEvents": true, "color": "#2e9e4f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e9e4f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_26c577c9be7ea154c7b1334207c86c16);
+        
+    
+        var popup_cb5267ced3ba1ba9d6a9224516a7921a = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_48665d3508962315d06067fc841382cf = $(`<div id="html_48665d3508962315d06067fc841382cf" style="width: 100.0%; height: 100.0%;"><b><i>Trifolium repens</i></b><br>Plantae / Magnoliopsida<br>plants<br>GBIF · 2020-05-22</div>`)[0];
+                popup_cb5267ced3ba1ba9d6a9224516a7921a.setContent(html_48665d3508962315d06067fc841382cf);
+            
+        
+
+        circle_marker_6067e28a28ba7f4a95076e67417639b1.bindPopup(popup_cb5267ced3ba1ba9d6a9224516a7921a)
+        ;
+
+        
+    
+    
+            var circle_marker_df09737e12c1b4febceebc8e3c09f142 = L.circleMarker(
+                [45.0863060274, 7.7015229687],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_26c577c9be7ea154c7b1334207c86c16);
+        
+    
+        var popup_2a0ea49be418e7769ca5e77db29260f0 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_3e4e2f2dc4c9e2ca72fe50fd04dd7a90 = $(`<div id="html_3e4e2f2dc4c9e2ca72fe50fd04dd7a90" style="width: 100.0%; height: 100.0%;"><b><i>Trochulus hispidus</i></b><br>nan / nan<br>other<br>iNaturalist · 2024-10-28</div>`)[0];
+                popup_2a0ea49be418e7769ca5e77db29260f0.setContent(html_3e4e2f2dc4c9e2ca72fe50fd04dd7a90);
+            
+        
+
+        circle_marker_df09737e12c1b4febceebc8e3c09f142.bindPopup(popup_2a0ea49be418e7769ca5e77db29260f0)
+        ;
+
+        
+    
+    
+            var circle_marker_806f9d7d4ad8d4620aa7d4b0061edc57 = L.circleMarker(
+                [45.091376, 7.702625],
+                {"bubblingMouseEvents": true, "color": "#2e9e4f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e9e4f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_26c577c9be7ea154c7b1334207c86c16);
+        
+    
+        var popup_621ea0db9287fe4a954200651f8ccf1e = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_897dfdd15b97f7a0f900190547427b9e = $(`<div id="html_897dfdd15b97f7a0f900190547427b9e" style="width: 100.0%; height: 100.0%;"><b><i>Vitis vinifera</i></b><br>Plantae / Magnoliopsida<br>plants<br>GBIF · 2020-06-12</div>`)[0];
+                popup_621ea0db9287fe4a954200651f8ccf1e.setContent(html_897dfdd15b97f7a0f900190547427b9e);
+            
+        
+
+        circle_marker_806f9d7d4ad8d4620aa7d4b0061edc57.bindPopup(popup_621ea0db9287fe4a954200651f8ccf1e)
+        ;
+
+        
+    
+    
+            var circle_marker_5968190453eb816ceb91d07a7ee96ee3 = L.circleMarker(
+                [45.0864, 7.704],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_26c577c9be7ea154c7b1334207c86c16);
+        
+    
+        var popup_7a24acb5109b62476c5dfb9036b431d2 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_2f55ff951536c8802c23d3ecb2d7c17b = $(`<div id="html_2f55ff951536c8802c23d3ecb2d7c17b" style="width: 100.0%; height: 100.0%;"><b><i>Yersinia enterocolitica</i></b><br>Bacteria / Gammaproteobacteria<br>other<br>GBIF · 2014</div>`)[0];
+                popup_7a24acb5109b62476c5dfb9036b431d2.setContent(html_2f55ff951536c8802c23d3ecb2d7c17b);
+            
+        
+
+        circle_marker_5968190453eb816ceb91d07a7ee96ee3.bindPopup(popup_7a24acb5109b62476c5dfb9036b431d2)
+        ;
+
+        
+    
+    
+            var layer_control_e2fa2831a1612ad54abf81ae69a6c580_layers = {
+                base_layers : {
+                    "Satellite" : tile_layer_29b67d6a857c214a235c139b6d38e514,
+                },
+                overlays :  {
+                    "boundary" : geo_json_ae25b1cb2c72f69e7d9ed6467177fb9e,
+                    "Inside boundary" : feature_group_69251b7ba4b97e2074dcfb2a2d3fe8e2,
+                    "0\u201350 m" : feature_group_3cb23552e8ee01f857a0d753f93b7151,
+                    "50\u2013100 m" : feature_group_d080f8f625dacc5aa8e89d9909debb06,
+                    "100\u2013200 m" : feature_group_cf593777c1845762bb1965f6c844c7ca,
+                    "200\u2013300 m" : feature_group_26c577c9be7ea154c7b1334207c86c16,
+                },
+            };
+            let layer_control_e2fa2831a1612ad54abf81ae69a6c580 = L.control.layers(
+                layer_control_e2fa2831a1612ad54abf81ae69a6c580_layers.base_layers,
+                layer_control_e2fa2831a1612ad54abf81ae69a6c580_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_3643a3c837ee6641a6827220e9c37f37);
+
+        
+</script>
+</html>
