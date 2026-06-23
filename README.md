@@ -1,12 +1,18 @@
 # GREENHANCE-Urban-Gardens-Biodiversity
 Mapping and monitoring biodiversity across urban gardens in Barcelona, Torino, and Malmö, developed within the GREENHANCEnbt project under the Biodiversa+ partnership. 
-Study sites
+
+
 
 City Garden
+
 Barcelona Jardins del Doctor Pla i Armengol 
+
 Barcelona Hort Urbà Masia Can Mestres
+
 Torino Orti Generali
+
 Torino AgroBarriera
+
 Malmö Botildenborg
 
 Dashboards
