@@ -17,6 +17,6 @@ Malmö Botildenborg
 
 Dashboards
 
-All-gardens visual aid —https://max16888.github.io/GREENHANCE-Urban-Gardens-Biodiversity]
+All-gardens visual aid —https://max16888.github.io/GREENHANCE-Urban-Gardens-Biodiversity
 
 
